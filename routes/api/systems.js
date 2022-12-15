@@ -109,9 +109,9 @@ router.post('/update/:id', async (req, res) => {
 // @access  Public
 router.get('/all', async (req, res) => {
     try {
-        const enteries = await Entry.find().all();
+        const systems = await System.find().all();
 
-        res.status(200).send(enteries);
+        res.status(200).send(systems);
     } catch (err) {
         console.log(err);
         res.status(500).send("server error: ", err);
