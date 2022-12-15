@@ -1,4 +1,4 @@
 {
-    "mongoURI": "mongodb://localhost:27017/Ilya",
+    "mongoURI": "mongodb://localhost:27017/systems",
     "jwtSecret": "secret"
 }
