@@ -71,7 +71,7 @@ router.post('/insert', [
 
 
 
-// @route   POST api/entries
+// @route   POST api
 // @desc    UPDATE a single entry
 // @access  Public
 router.post('/update/:id', async (req, res) => {
