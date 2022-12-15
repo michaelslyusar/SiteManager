@@ -6,7 +6,7 @@ const connectDB = require('./config/db');
 const app = express();
 
 app.use(cors({
-    origin: 'http://localhost:5500'
+    origin: 'http://127.0.0.1:5500'
 }))
 
 connectDB();

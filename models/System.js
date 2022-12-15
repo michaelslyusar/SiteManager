@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const InspectionSchema = new mongoose.Schema(
     {
-        description: { type: String, required: true, unique:true },
+        description: { type: String, required: true },
         lastPerformed: { type: String },
         toBePerformed: { type: String }
 
@@ -11,7 +11,7 @@ const InspectionSchema = new mongoose.Schema(
 
 const WaiverSchema = new mongoose.Schema(
     {
-        description: { type: String, required: true, unique:true },
+        description: { type: String, required: true },
         validUntill: { type: String },
         authorizedBy: { type: String }
     }
@@ -19,7 +19,7 @@ const WaiverSchema = new mongoose.Schema(
 
 const PermitSchema = new mongoose.Schema(
     {
-        description: { type: String, required: true, unique:true },
+        description: { type: String, required: true },
         validUntill: { type: String },
         authorizedBy: { type: String }
     }

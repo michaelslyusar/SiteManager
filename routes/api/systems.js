@@ -68,8 +68,31 @@ router.post('/insert', [
 
 });
 
+// @route   POST api
+// @desc    DELETE a single system
+// @access  Public
+router.post('/delete', [
+    check('systemName', 'systemName is required')
+], async (req, res) => {
+    const errors = validationResult(req.body)
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ "errors": errors.array() })
+    }
+    try {
+        const systemName = req.body.systemName;
+        console.log(systemName);
 
+        const deletedSystem = await System.findOne({ "systemName": systemName });
+        if (!deletedSystem) {
 
+            return res.status(400).send('Wrong tail number')
+        }
+        await deletedSystem.remove();
+        return res.status(200).send('Successfully deleted')
+    } catch (err) {
+        console.log(err)
+    }
+})
 
 // @route   POST api
 // @desc    UPDATE a single entry
